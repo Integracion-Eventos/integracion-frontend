@@ -1,0 +1,7 @@
+{
+  "name": "frontend-sistemaeventos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
