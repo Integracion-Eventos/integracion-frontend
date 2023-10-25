@@ -94,4 +94,7 @@ export class RegisterComponent  implements OnInit {
     toast.present();
   }
 
+  redirectLogin(){
+    this.router.navigate(['/login'])
+  } 
 }

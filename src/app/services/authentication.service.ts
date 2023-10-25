@@ -38,4 +38,5 @@ export class AuthenticationService {
       this.apiUrl + '/user/check/' + username 
     )
   }
+  
 }
