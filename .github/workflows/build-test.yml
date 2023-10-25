@@ -25,5 +25,5 @@ jobs:
           node-version: '20.x'
       - run: npm install -g @ionic/cli
       - run: npm install
-      - run: ionic serve --port=8100 --nobrowser
+      - run: ionic serve --nobrowser
       - run: npm test -- --browsers=ChromeHeadless
