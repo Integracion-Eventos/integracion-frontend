@@ -19,5 +19,23 @@ export class AuthenticationService {
     );
   }
 
+  registerBuyer(buyerRegistrationDTO: any): Observable<any> {
+    return this.http.post<boolean>(
+      this.apiUrl + '/buyer/register',
+      buyerRegistrationDTO
+    );
+  }
 
+  registerOrganizer(organizerRegisterDTO: any): Observable<any>{
+    return this.http.post<boolean>(
+      this.apiUrl + '/organizer/register',
+      organizerRegisterDTO
+    )
+  }
+
+  checkUsername(username: string): Observable<any>{
+    return this.http.get<boolean>(
+      this.apiUrl + '/user/check/' + username 
+    )
+  }
 }

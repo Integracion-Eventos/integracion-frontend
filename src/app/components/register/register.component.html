@@ -1,0 +1,90 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Registro</ion-card-title>
+    </ion-card-header>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <ion-card-content>
+        <ion-list ion-list *ngIf="registrationForm.get('isBuyer')?.value; else organizationName" lines="full">
+          <ion-item>
+            <ion-label>Registrarse como Comprador</ion-label>
+            <ion-toggle formControlName="isBuyer"></ion-toggle>
+          </ion-item>
+        </ion-list>
+
+        <ng-template #organizationName>
+          <ion-list>
+            <ion-item>
+              <ion-label>Registrarse como Organizador</ion-label>
+              <ion-toggle formControlName="isBuyer"></ion-toggle>
+            </ion-item>
+          </ion-list>
+        </ng-template>
+
+        <ion-list *ngIf="registrationForm.get('isBuyer')?.value; else organizationFields">
+          <ion-item>
+            <ion-label position="stacked" for="firstName">First Name</ion-label>
+            <ion-input id="firstName" formControlName="firstName" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked" for="lastName">Last Name</ion-label>
+            <ion-input id="lastName" formControlName="lastName" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked" for="buyerUsername">Username</ion-label>
+            <ion-input id="buyerUsername" formControlName="username" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked" for="buyerEmail">Email</ion-label>
+            <ion-input id="buyerEmail" formControlName="email" type="email" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked" for="buyerPassword">Password</ion-label>
+            <ion-input id="buyerPassword" formControlName="password" type="password" required></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <ng-template #organizationFields>
+          <ion-list>
+            <ion-item>
+              <ion-label position="stacked" for="orgName">Name</ion-label>
+              <ion-input id="orgName" formControlName="name" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked" for="rfc">RFC</ion-label>
+              <ion-input id="rfc" formControlName="rfc" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked" for="employeeCode">Employee Code</ion-label>
+              <ion-input id="employeeCode" formControlName="employeeCode" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked" for="orgFirstName">First Name</ion-label>
+              <ion-input id="orgFirstName" formControlName="firstName" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked" for="orgLastName">Last Name</ion-label>
+              <ion-input id="orgLastName" formControlName="lastName" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked" for="orgUserName">Username</ion-label>
+              <ion-input id="orgUserName" formControlName="username" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked" for="orgEmail">Email</ion-label>
+              <ion-input id="orgEmail" formControlName="email" type="email" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked" for="orgPassword">Password</ion-label>
+              <ion-input id="orgPassword" formControlName="password" type="password" required></ion-input>
+            </ion-item>
+          </ion-list>
+        </ng-template>
+
+        <ion-button expand="full" type="submit" [disabled]="!registrationForm.valid">
+          Registrarse
+        </ion-button>
+      </ion-card-content>
+    </form>
+  </ion-card>
+</ion-content>
