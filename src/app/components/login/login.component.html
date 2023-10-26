@@ -1,16 +1,16 @@
-<ion-content>
+<ion-content class="custom-background">
   <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
     <ion-item>
-      <ion-label position="stacked">Username</ion-label>
-      <ion-input formControlName="username" type="text"></ion-input>
+      <ion-label position="stacked" class="custom-label">Username</ion-label>
+      <ion-input formControlName="username" type="text" class="custom-input"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="stacked">Password</ion-label>
-      <ion-input formControlName="password" type="password"></ion-input>
+      <ion-label position="stacked" class="custom-label">Password</ion-label>
+      <ion-input formControlName="password" type="password" class="custom-input"></ion-input>
     </ion-item>
-    <ion-button expand="block" type="submit">Iniciar sesión</ion-button>
+    <ion-button expand="block" type="submit" class="custom-button">Iniciar sesión</ion-button>
   </form>
-  <ion-button expand="block" (click)="redirectRegister()" class="ion-color-secondary"> 
+  <ion-button expand="block" (click)="redirectRegister()" class="custom-button-register">
     Registrarse
   </ion-button>
 </ion-content>

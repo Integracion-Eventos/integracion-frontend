@@ -1,0 +1,19 @@
+
+    <ion-grid *ngFor="let event of events; let index">
+      <ion-row >
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>{{ event.event_name }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-card-subtitle>{{ event.event_description }}</ion-card-subtitle>
+              <p>Date: {{ event.event_date }}</p>
+              <p>Category: {{ event.event_category_name }}</p>
+              <p>Location: {{ event.event_location }}</p>
+              <ion-img [src]="event.image_url"></ion-img>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
