@@ -32,4 +32,40 @@ export class RoleGuard implements CanActivate {
     this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
     return false;
   }
+
+  getId() : any {
+    interface DecodedToken {
+      user_id: string;
+      roles: {
+        authority: string;
+      };
+      sub: string;
+      iat: number;
+      exp: number;
+    }
+    const token = localStorage.getItem('jwt');
+    if (token) {
+    const decodedToken = jwt_decode(token) as DecodedToken;
+    const userId = decodedToken.user_id;
+    return userId;
+    }
+  }
+
+  getRole():any{
+    interface DecodedToken {
+      user_id: string;
+      roles: {
+        authority: string;
+      };
+      sub: string;
+      iat: number;
+      exp: number;
+    }
+    const token = localStorage.getItem('jwt');
+    if (token) {
+    const decodedToken = jwt_decode(token) as DecodedToken;
+    const roleUser = decodedToken.roles.authority;
+    return roleUser;
+    }
+  }
 }

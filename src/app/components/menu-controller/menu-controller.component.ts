@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 
 @Component({
@@ -8,7 +9,7 @@ import { MenuController } from '@ionic/angular';
 })
 export class MenuControllerComponent  implements OnInit {
 
-  constructor(private menuController: MenuController) { }
+  constructor(private menuController: MenuController, private router: Router) { }
 
   ngOnInit() {
 
@@ -22,5 +23,13 @@ export class MenuControllerComponent  implements OnInit {
 
   }
 
-  navigateToPerfil(){}
+  navigateToPrincipal(){
+    this.router.navigate(['/'])
+    this.menuController.close()
+  }
+
+  navigateToPerfil(){
+    this.router.navigate(['/profile'])
+    this.menuController.close()
+  }
 }

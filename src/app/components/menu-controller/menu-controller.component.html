@@ -1,10 +1,16 @@
-<ion-menu side="start" menuId="main-menu" contentId="main-content">
+<ion-menu side="start" contentId="main-content">
   <ion-header>
     <ion-toolbar color="primary">
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
+    <ion-card class="menu-card" (click)="navigateToPrincipal()">
+      <ion-card-content class="menu-card-content">
+        <ion-icon class="menu-icon" name="home"></ion-icon>
+        <ion-label class="menu-label">Inicio</ion-label>
+      </ion-card-content>
+    </ion-card>
     <ion-card class="menu-card" (click)="navigateToEventos()">
       <ion-card-content class="menu-card-content">
         <ion-icon class="menu-icon" name="calendar"></ion-icon>
