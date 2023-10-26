@@ -1,50 +1,66 @@
-<div *ngIf="userData" class="ion-page" id="main-content">
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Perfil de usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <ion-content [fullscreen]="true">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Usuario: {{userData.user.username}}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-list>
-          <ion-item>
-            <ion-label>Email:</ion-label>
-            <ion-note> {{userData.user.email}}</ion-note>
-          </ion-item>
-          <ion-item>
-            <ion-label>Nombre: </ion-label>
-            <ion-note> {{userData.data.firstname}}</ion-note>
-          </ion-item>  
-          <ion-item>
-            <ion-label>Apellido: </ion-label>
-            <ion-note> {{userData.data.lastname}}</ion-note>
-          </ion-item>
-        </ion-list>
-        <ion-list *ngIf="isEmployee">
-          <ion-item>
-            <ion-label>Código de empleado: </ion-label>
-            <ion-note> {{userData.data.employeeCode}}</ion-note>
-          </ion-item>
-          <ion-item>
-            <ion-label>Estado de empleado: </ion-label>
-            <ion-note> {{userData.data.status}}</ion-note>
-          </ion-item>          
-        </ion-list>
-      </ion-card-content>
-    </ion-card>
-  </ion-content>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card *ngIf="userData">
+    <ion-card-header>
+      <ion-card-title>Detalles del usuario</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="full">
+        <ion-item>
+          <ion-label>Email:</ion-label>
+          <ion-note> {{userData.user.email}}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Nombre: </ion-label>
+          <ion-note> {{userData.data.firstname}}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Apellido: </ion-label>
+          <ion-note> {{userData.data.lastname}}</ion-note>
+        </ion-item>
+        <ion-item *ngIf="isEmployee">
+          <ion-label>Código de empleado: </ion-label>
+          <ion-note> {{userData.data.employeeCode}}</ion-note>
+        </ion-item>
+        <ion-item *ngIf="isEmployee">
+          <ion-label>Estado de empleado: </ion-label>
+          <ion-note> {{userData.data.status}}</ion-note>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="organizerData">
+    <ion-card-header>
+      <ion-card-title>Detalles de la organización</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="full">
+        <ion-item>
+          <ion-label>Organización: </ion-label>
+          <ion-note> {{organizerData.data.name}}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>RFC: </ion-label>
+          <ion-note> {{organizerData.data.rfc}}</ion-note>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
   <ion-footer *ngIf="isEmployee">
     <ion-toolbar>
-      <ion-label>  
+      <ion-label>
         <ion-note slot="start" color="tertiary">Último acceso: {{userData.data.last_access}}</ion-note>
       </ion-label>
     </ion-toolbar>
   </ion-footer>
-</div>
+</ion-content>

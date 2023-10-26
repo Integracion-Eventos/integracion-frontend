@@ -11,8 +11,8 @@ export class MenuControllerComponent  implements OnInit {
 
   constructor(private menuController: MenuController, private router: Router) { }
 
-  ngOnInit() {
-
+  async ngOnInit() {
+ 
   }
 
   openMenu() {
@@ -30,6 +30,11 @@ export class MenuControllerComponent  implements OnInit {
 
   navigateToPerfil(){
     this.router.navigate(['/profile'])
+    this.menuController.close()
+  }
+
+  navigateToOrganizer(){
+    this.router.navigate(['/organizer'])
     this.menuController.close()
   }
 }
