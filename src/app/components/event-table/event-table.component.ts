@@ -10,7 +10,7 @@ import { EventService } from 'src/app/services/event.service';
 })
 export class EventTableComponent  implements OnInit {
   events : any[] = [];
-
+  
   constructor(private eventService: EventService) { }
 
   ngOnInit() {

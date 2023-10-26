@@ -1,0 +1,22 @@
+<ion-menu side="start" menuId="main-menu" contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-card class="menu-card" (click)="navigateToEventos()">
+      <ion-card-content class="menu-card-content">
+        <ion-icon class="menu-icon" name="calendar"></ion-icon>
+        <ion-label class="menu-label">Eventos</ion-label>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="menu-card" (click)="navigateToPerfil()">
+      <ion-card-content class="menu-card-content">
+        <ion-icon class="menu-icon" name="person"></ion-icon>
+        <ion-label class="menu-label">Perfil</ion-label>
+      </ion-card-content>
+    </ion-card>
+    <!-- Agrega más opciones según sea necesario -->
+  </ion-content>
+</ion-menu>

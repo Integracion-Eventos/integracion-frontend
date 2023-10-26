@@ -24,3 +24,73 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+
+
+
+:root {
+    // Colores en formato HEX
+    --dutch-white: #f4e8c1ff;
+    --ash-gray: #a0c1b9ff;
+    --moonstone: #70a0afff;
+    --pomp-and-power: #706993ff;
+    --dark-purple: #331e38ff;
+  
+    // Colores en formato HSL
+    --dutch-white-hsl: hsla(46, 70%, 86%, 1);
+    --ash-gray-hsl: hsla(165, 21%, 69%, 1);
+    --moonstone-hsl: hsla(194, 28%, 56%, 1);
+    --pomp-and-power-hsl: hsla(250, 17%, 49%, 1);
+    --dark-purple-hsl: hsla(288, 30%, 17%, 1);
+  
+    // Colores en formato RGB
+    --dutch-white-rgb: rgba(244, 232, 193, 1);
+    --ash-gray-rgb: rgba(160, 193, 185, 1);
+    --moonstone-rgb: rgba(112, 160, 175, 1);
+    --pomp-and-power-rgb: rgba(112, 105, 147, 1);
+    --dark-purple-rgb: rgba(51, 30, 56, 1);
+  
+    // Gradients
+    --gradient-top: linear-gradient(0deg, var(--dutch-white), var(--ash-gray), var(--moonstone), var(--pomp-and-power), var(--dark-purple));
+    --gradient-right: linear-gradient(90deg, var(--dutch-white), var(--ash-gray), var(--moonstone), var(--pomp-and-power), var(--dark-purple));
+    --gradient-bottom: linear-gradient(180deg, var(--dutch-white), var(--ash-gray), var(--moonstone), var(--pomp-and-power), var(--dark-purple));
+    --gradient-left: linear-gradient(270deg, var(--dutch-white), var(--ash-gray), var(--moonstone), var(--pomp-and-power), var(--dark-purple));
+    --gradient-top-right: linear-gradient(45deg, var(--dutch-white), var(--ash-gray), var(--moonstone), var(--pomp-and-power), var(--dark-purple));
+    --gradient-bottom-right: linear-gradient(135deg, var(--dutch-white), var(--ash-gray), var(--moonstone), var(--pomp-and-power), var(--dark-purple));
+    --gradient-top-left: linear-gradient(225deg, var(--dutch-white), var(--ash-gray), var(--moonstone), var(--pomp-and-power), var(--dark-purple));
+    --gradient-bottom-left: linear-gradient(315deg, var(--dutch-white), var(--ash-gray), var(--moonstone), var(--pomp-and-power), var(--dark-purple));
+    --gradient-radial: radial-gradient(var(--dutch-white), var(--ash-gray), var(--moonstone), var(--pomp-and-power), var(--dark-purple));
+  }
+  
+
+/* SCSS HEX */
+$dutch-white: #f4e8c1ff;
+$ash-gray: #a0c1b9ff;
+$moonstone: #70a0afff;
+$pomp-and-power: #706993ff;
+$dark-purple: #331e38ff;
+
+/* SCSS HSL */
+$dutch-white: hsla(46, 70%, 86%, 1);
+$ash-gray: hsla(165, 21%, 69%, 1);
+$moonstone: hsla(194, 28%, 56%, 1);
+$pomp-and-power: hsla(250, 17%, 49%, 1);
+$dark-purple: hsla(288, 30%, 17%, 1);
+
+/* SCSS RGB */
+$dutch-white: rgba(244, 232, 193, 1);
+$ash-gray: rgba(160, 193, 185, 1);
+$moonstone: rgba(112, 160, 175, 1);
+$pomp-and-power: rgba(112, 105, 147, 1);
+$dark-purple: rgba(51, 30, 56, 1);
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #f4e8c1ff, #a0c1b9ff, #70a0afff, #706993ff, #331e38ff);
+$gradient-right: linear-gradient(90deg, #f4e8c1ff, #a0c1b9ff, #70a0afff, #706993ff, #331e38ff);
+$gradient-bottom: linear-gradient(180deg, #f4e8c1ff, #a0c1b9ff, #70a0afff, #706993ff, #331e38ff);
+$gradient-left: linear-gradient(270deg, #f4e8c1ff, #a0c1b9ff, #70a0afff, #706993ff, #331e38ff);
+$gradient-top-right: linear-gradient(45deg, #f4e8c1ff, #a0c1b9ff, #70a0afff, #706993ff, #331e38ff);
+$gradient-bottom-right: linear-gradient(135deg, #f4e8c1ff, #a0c1b9ff, #70a0afff, #706993ff, #331e38ff);
+$gradient-top-left: linear-gradient(225deg, #f4e8c1ff, #a0c1b9ff, #70a0afff, #706993ff, #331e38ff);
+$gradient-bottom-left: linear-gradient(315deg, #f4e8c1ff, #a0c1b9ff, #70a0afff, #706993ff, #331e38ff);
+$gradient-radial: radial-gradient(#f4e8c1ff, #a0c1b9ff, #70a0afff, #706993ff, #331e38ff);
