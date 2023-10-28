@@ -1,0 +1,38 @@
+.event-content {
+    --ion-safe-area-top: 20px;
+  }
+  
+  .event-card {
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  /* Personaliza los colores según tus preferencias y la paleta de tu aplicación */
+  
+  ion-button {
+    --background: #3498db;
+    --background-activated: #2980b9;
+    --border-radius: 10px;
+    --padding-start: 20px;
+    --padding-end: 20px;
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  ion-button[color="success"] {
+    --background: #2ecc71;
+    --background-activated: #27ae60;
+  }
+  
+  ion-button[color="warning"] {
+    --background: #f39c12;
+    --background-activated: #d35400;
+  }
+  

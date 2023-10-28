@@ -1,0 +1,35 @@
+<ion-content class="event-content">
+  <ion-card class="event-card">
+    <ion-card-header class="event-header">
+      <ion-card-title>Create New Event</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list class="seating-list">
+        <ion-item class="seating-item" lines="none">
+          <ion-label class="seating-label">Available Seats</ion-label>
+          <div class="seats-container">
+            <ng-container *ngFor="let seat of seatingData.seatsData">
+              <ion-button
+                class="seat-button"
+                (click)="toggleSeatSelection(seat)"
+                [color]="seat.selected ? 'tertiary' : 'secondary'"
+                expand="block"
+              >
+                {{ 'A' + seat.seatNumber }}
+              </ion-button>
+            </ng-container>
+          </div>
+        </ion-item>
+        <ion-item class="assign-item" lines="none">
+          <ion-button class="assign-button" (click)="assignSeats('VIP')" expand="block" color="primary">Assign VIP Seats</ion-button>
+        </ion-item>
+        <ion-item class="assign-item" lines="none">
+          <ion-button class="assign-button" (click)="assignSeats('General')" expand="block" color="primary">Assign General Seats</ion-button>
+        </ion-item>
+        <ion-item class="reset-item" lines="none">
+          <ion-button class="reset-button" (click)="resetSeats()" expand="block" color="danger">Reset Seats</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

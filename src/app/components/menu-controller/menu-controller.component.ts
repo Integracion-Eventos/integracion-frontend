@@ -20,7 +20,8 @@ export class MenuControllerComponent  implements OnInit {
   }
 
   navigateToEventos(){
-
+    this.router.navigate(['/events'])
+    this.menuController.close() 
   }
 
   navigateToPrincipal(){

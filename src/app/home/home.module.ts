@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
-import { EventTableComponent } from '../components/event-table/event-table.component';
 import { HomePageRoutingModule } from './home-routing.module';
 
 
@@ -14,6 +13,6 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, EventTableComponent]
+  declarations: [HomePage]
 })
 export class HomePageModule {}

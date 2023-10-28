@@ -5,23 +5,13 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class EventService {
+export class EventcategoriesService {
   private apiUrl = 'http://localhost:8080/api'
-
   constructor(private http: HttpClient) { }
 
-
-  getAvailableEvents() : Observable<any> {
+  getEventCategories() : Observable<any> {
     return this.http.get<[]>(
-      this.apiUrl + '/events/available'
+      this.apiUrl + "/event/categories"
     );
   }
-
-  createEvent(EventCreationDTO:any) : Observable<any> {
-    return this.http.post<[]>(
-      this.apiUrl + '/event/register',
-      EventCreationDTO
-    );
-  }
-
 }
