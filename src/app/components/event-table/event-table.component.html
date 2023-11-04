@@ -12,6 +12,9 @@
               <p>Category: {{ event.event_category_name }}</p>
               <p>Location: {{ event.event_location }}</p>
               <ion-img [src]="event.image_url"></ion-img>
+              <ion-item *ngIf="isBuyer">
+                <ion-button (click)="buyTickets(event.event_id)">Comprar boletos</ion-button>
+              </ion-item>
             </ion-card-content>
           </ion-card>
         </ion-col>

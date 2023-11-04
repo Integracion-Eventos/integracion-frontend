@@ -9,6 +9,7 @@ export class RoleGuard implements CanActivate {
 
   constructor(private authService: AuthenticationService, private router: Router) {}
 
+  private jwtCookieName = 'jwt';
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean {
     const expectedRole = route.data['expectedRole'];
     interface DecodedToken {

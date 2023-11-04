@@ -17,9 +17,11 @@ import { ProfileMenuComponent } from './components/profile-menu/profile-menu.com
 import { EventMenuComponent } from './components/event-menu/event-menu.component';
 import { EventCreationComponent } from './components/event-creation/event-creation.component';
 import { FormsModule } from '@angular/forms';
+import { PurchaseTicketsComponent } from './components/purchase-tickets/purchase-tickets.component';
+import { PaypalsuccessComponent } from './components/paypalsuccess/paypalsuccess.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, MenuControllerComponent, ProfileMenuComponent, EventCreationComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, MenuControllerComponent, ProfileMenuComponent, EventCreationComponent, PaypalsuccessComponent, PurchaseTicketsComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
   exports: [MenuControllerComponent],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi:true}],

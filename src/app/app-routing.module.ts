@@ -6,6 +6,8 @@ import { AuthGuard } from './services/authguard';
 import { ProfileMenuComponent } from './components/profile-menu/profile-menu.component';
 import { EventMenuComponent } from './components/event-menu/event-menu.component';
 import { EventCreationComponent } from './components/event-creation/event-creation.component';
+import { PurchaseTicketsComponent } from './components/purchase-tickets/purchase-tickets.component';
+import { PaypalsuccessComponent } from './components/paypalsuccess/paypalsuccess.component';
 
 
 const routes: Routes = [
@@ -35,6 +37,16 @@ const routes: Routes = [
   {
     path: 'create-event',
     component: EventCreationComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'purchase/success',
+    component: PaypalsuccessComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'purchase/:id',
+    component: PurchaseTicketsComponent,
     canActivate: [AuthGuard]
   },
   {

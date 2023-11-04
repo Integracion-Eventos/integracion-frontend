@@ -17,6 +17,12 @@ export class EventService {
     );
   }
 
+  getEvent(id : any) : Observable<any> {
+    return this.http.get<[]>(
+      this.apiUrl + '/events/' + id
+    );
+  }
+
   createEvent(EventCreationDTO:any) : Observable<any> {
     return this.http.post<[]>(
       this.apiUrl + '/event/register',

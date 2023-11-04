@@ -1,0 +1,62 @@
+ion-content {
+    --background: #f4f4f4;
+  }
+  
+  .event-card {
+    img {
+      width: 100%;
+    }
+    ion-card-content {
+      p {
+        color: #555;
+      }
+    }
+  }
+  
+  .seating-grid {
+    margin-top: 20px;
+    ion-row.ticket-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      ion-col.ticket-column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5px;
+        .seat-button {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          &.ion-color-success {
+            --ion-color-base: #4caf50;
+          }
+          &.ion-color-primary {
+            --ion-color-base: #2196f3;
+          }
+          &[disabled] {
+            --ion-color-base: #f44336;
+          }
+        }
+      }
+    }
+  }
+  
+  .ticket-selection-list {
+    margin-top: 20px;
+    ion-item {
+      ion-label {
+        font-size: 18px;
+      }
+      ion-input {
+        max-width: 100px;
+      }
+    }
+  }
+  
+  .purchase-button {
+    margin-top: 20px;
+    --background: #2196f3;
+    --color: #fff;
+  }
+  

@@ -1,0 +1,43 @@
+<ion-content>
+  <ion-card class="event-card" *ngIf="eventData">
+    <img [src]="eventData.image_url" />
+    <ion-card-header>
+      <ion-card-title>{{ eventData.event_name }}</ion-card-title>
+      <ion-card-subtitle>{{ eventData.event_location }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ eventData.event_description }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid *ngIf="hasSeating" class="seating-grid">
+    <ion-row *ngFor="let row of ticketRows" class="ticket-row">
+      <ion-col size="2" *ngFor="let ticket of row" class="ticket-column">
+        <ion-button
+          [color]="ticket.isSelected ? 'success' : 'primary'"
+          (click)="toggleSelection(ticket)"
+          [disabled]="!ticket.available"
+          class="seat-button"
+        >
+          {{ ticket.seatAssignment }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list *ngIf="!hasSeating" class="ticket-selection-list">
+    <ion-item>
+      <ion-label>Selecciona el tipo de ticket:</ion-label>
+      <ion-select [(ngModel)]="ticketType">
+        <ion-select-option value="VIP">Ticket VIP</ion-select-option>
+        <ion-select-option value="General">Ticket General</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ ticketLabel }}</ion-label>
+      <ion-input type="number" [(ngModel)]="ticketCount" (ionChange)="handleTicketCountChange()"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" (click)="purchaseTickets()" class="purchase-button">Comprar</ion-button>
+</ion-content>
