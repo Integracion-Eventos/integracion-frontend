@@ -18,7 +18,7 @@ export class PopularEventsComponent  implements OnInit {
 
   ngOnInit() {
     this.getPopularEvents()
-  
+    console.log(this.popularevents)
   }
 
 
