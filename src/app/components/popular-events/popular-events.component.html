@@ -1,0 +1,16 @@
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let event of popularevents">
+        <ion-card>
+          <img [src]="event.image_url" alt="Event Image">
+          <ion-card-header>
+            <ion-card-title>{{ event.event_name }}</ion-card-title>
+            <ion-card-subtitle>{{ event.event_date | date: 'medium' }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ event.event_description }}</p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </div>

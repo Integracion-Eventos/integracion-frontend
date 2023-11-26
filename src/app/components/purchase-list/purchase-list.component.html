@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list lines="full" class="purchase-list">
+    <ion-item *ngFor="let purchase of purchases" lines="full" class="purchase-item">
+      <ion-label class="purchase-label">
+        <h2 class="purchase-id">{{ purchase.purchase_id }}</h2>
+        <p class="purchase-date">{{ purchase.purchase_date | date: 'medium' }}</p>
+        <p class="purchase-quantity">Cantidad de Tickets: {{ purchase.purchase_quantity }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+

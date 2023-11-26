@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Detalle Eventos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ evento_dict.nombre }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-img [src]="evento_dict.url_imagen"></ion-img>
+      <p>Fecha: {{ evento_dict.fecha }}</p>
+      <p>Descripción: {{ evento_dict.descripcion }}</p>
+      <p>Locación: {{ evento_dict.locacion }}</p>
+      <p class="ticket-info">Tickets Vendidos: {{ evento_dict.tickets_vendidos }}</p>
+      <p class="ticket-info">Tickets Restantes: {{ evento_dict.tickets_restantes }}</p>
+      <p class="ticket-info">Ganancia Total: {{ evento_dict.ganancia_total }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
