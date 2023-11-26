@@ -8,6 +8,8 @@ import { EventMenuComponent } from './components/event-menu/event-menu.component
 import { EventCreationComponent } from './components/event-creation/event-creation.component';
 import { PurchaseTicketsComponent } from './components/purchase-tickets/purchase-tickets.component';
 import { PaypalsuccessComponent } from './components/paypalsuccess/paypalsuccess.component';
+import { PurchaseListComponent } from './components/purchase-list/purchase-list.component';
+import { EventDetailsComponent } from './components/event-details/event-details.component';
 
 
 const routes: Routes = [
@@ -50,8 +52,18 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: '',
-    redirectTo: 'home',
+    path: 'purchases',
+    component: PurchaseListComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'event/details/:id',
+    component: EventDetailsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: '**',
+    redirectTo: '',
     pathMatch: 'full'
   },
 ];

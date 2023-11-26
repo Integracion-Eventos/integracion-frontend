@@ -19,12 +19,14 @@ import { EventCreationComponent } from './components/event-creation/event-creati
 import { FormsModule } from '@angular/forms';
 import { PurchaseTicketsComponent } from './components/purchase-tickets/purchase-tickets.component';
 import { PaypalsuccessComponent } from './components/paypalsuccess/paypalsuccess.component';
+import { PurchaseListComponent } from './components/purchase-list/purchase-list.component';
+import { EventDetailsComponent } from './components/event-details/event-details.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, MenuControllerComponent, ProfileMenuComponent, EventCreationComponent, PaypalsuccessComponent, PurchaseTicketsComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, MenuControllerComponent, ProfileMenuComponent, EventCreationComponent, PurchaseListComponent, PaypalsuccessComponent, EventDetailsComponent, PurchaseTicketsComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
   exports: [MenuControllerComponent],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi:true}],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

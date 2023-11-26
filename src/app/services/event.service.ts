@@ -29,11 +29,35 @@ export class EventService {
       EventCreationDTO
     );
   }
-
-  getPopularEvents() : Observable<any> {
+  getPopularEvents() : Observable<any>{
     return this.http.get<[]>(
       this.apiUrl + '/events/popular'
-    );
+    )
   }
 
+  getIncomingEvents() : Observable<any>{
+    return this.http.get<[]>(
+      this.apiUrl + '/event/incoming'
+    )
+  }
+
+  getEventsByCategory(category : any) : Observable<any>{
+    return this.http.get<[]>(
+      this.apiUrl + '/events/category/' + category
+    )
+  }
+
+  getSearchedEvents(search : any) : Observable<any>{
+    return this.http.get<[]>(
+      this.apiUrl + '/events/search/' + search
+    )
+  }
+
+  getEventsByDate(dateStart : any, dateEnd : any) : Observable<any>{
+    return this.http.get<[]>(
+      this.apiUrl + '/events/date/' + dateStart + '/' + dateEnd
+    )
+  }
 }
+
+

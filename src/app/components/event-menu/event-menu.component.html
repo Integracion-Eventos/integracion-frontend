@@ -4,26 +4,30 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Eventos</ion-title>
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon name="options"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="page-content">
+    <ion-searchbar debounce="500" (ionInput)="searchEvents($event)"></ion-searchbar>
+    <div class="filters-container" *ngIf="categories.length > 0">
+      <ion-label>Filtrar por categoría:</ion-label>
+      <ion-select [(ngModel)]="selectedCategory" (ionChange)="onCategoryChange($event)" interface="action-sheet">
+        <ion-select-option *ngFor="let category of categories" [value]="category.id">{{ category.category_name }}</ion-select-option>
+      </ion-select>
+    </div>
+    <ion-button *ngIf="selectedCategory || searchTerm" class="fill" (click)="clearSelection()">
+      Limpiar filtros
+    </ion-button>
     <div class="fab-container">
-      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab *ngIf="isEmployeeAdmin || isEmployeeEvent" vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button (click)="redirectToCreation()">
           <ion-icon name="add"></ion-icon>
         </ion-fab-button>
       </ion-fab>
     </div>
     <div class="table-container">
-      <app-event-table></app-event-table>
+      <app-event-table [newevents]="events"></app-event-table>
     </div>
   </div>
 </ion-content>
-

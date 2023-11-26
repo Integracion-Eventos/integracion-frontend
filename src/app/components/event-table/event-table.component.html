@@ -1,5 +1,5 @@
 
-    <ion-grid *ngFor="let event of events; let index">
+    <ion-grid *ngFor="let event of newevents; let index">
       <ion-row >
         <ion-col>
           <ion-card>
@@ -8,12 +8,15 @@
             </ion-card-header>
             <ion-card-content>
               <ion-card-subtitle>{{ event.event_description }}</ion-card-subtitle>
-              <p>Date: {{ event.event_date }}</p>
+              <p>Date: {{ event.event_date | date: 'medium' }}</p>
               <p>Category: {{ event.event_category_name }}</p>
               <p>Location: {{ event.event_location }}</p>
               <ion-img [src]="event.image_url"></ion-img>
               <ion-item *ngIf="isBuyer">
                 <ion-button (click)="buyTickets(event.event_id)">Comprar boletos</ion-button>
+              </ion-item>
+              <ion-item *ngIf="isOrganizer">
+                <ion-button (click)="goToEventDetails(event.event_id)">Detalles de Evento</ion-button>
               </ion-item>
             </ion-card-content>
           </ion-card>

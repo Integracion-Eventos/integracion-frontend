@@ -16,4 +16,12 @@ export class PurchaseService {
       PurchasePayalDTO
     )
   }
+
+  getPurchaseByUserID(userId : any) : Observable<any>{
+    return this.http.get<[]>(
+      this.apiUrl + '/purchases/user/' + userId
+    )
+  }
+
+
 }

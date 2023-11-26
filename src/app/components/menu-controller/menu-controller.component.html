@@ -17,6 +17,12 @@
         <ion-label class="menu-label">Eventos</ion-label>
       </ion-card-content>
     </ion-card>
+    <ion-card class="menu-card" *ngIf="isBuyer"  (click)="navigateToCompras()">
+      <ion-card-content class="menu-card-content">
+        <ion-icon class="menu-icon" name="calendar"></ion-icon>
+        <ion-label class="menu-label">Mis Compras</ion-label>
+      </ion-card-content>
+    </ion-card>
     <ion-card class="menu-card" (click)="navigateToPerfil()">
       <ion-card-content class="menu-card-content">
         <ion-icon class="menu-icon" name="person"></ion-icon>

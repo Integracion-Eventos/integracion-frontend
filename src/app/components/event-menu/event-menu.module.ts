@@ -14,6 +14,6 @@ import { SeatingModalComponent } from '../seatingmodal/seatingmodal.component';
     IonicModule,
     EventMenuRoutingModule
   ],
-  declarations: [EventMenuComponent, EventTableComponent, SeatingModalComponent], // Asegúrate de declarar EventTableComponent aquí
+  declarations: [EventMenuComponent, EventTableComponent, SeatingModalComponent], 
 })
 export class EventMenuModule { }

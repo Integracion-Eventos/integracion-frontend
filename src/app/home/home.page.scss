@@ -1,0 +1,22 @@
+ion-content {
+    ion-grid {
+      h1 {
+        font-size: 1.5em;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+  
+      app-popular-events {
+        display: block;
+        margin: 0 auto;
+        max-width: 600px; /* Ajusta el ancho máximo según tus necesidades */
+      }
+
+      app-incoming-events {
+        display: block;
+        margin: 0 auto;
+        max-width: 600px; /* Ajusta el ancho máximo según tus necesidades */
+      }
+    }
+  }
+  
